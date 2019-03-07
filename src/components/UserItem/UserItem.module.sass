@@ -1,0 +1,76 @@
+$image-container-size: 50
+$font-family: sans-seri
+$control-container-background-color: white
+$content-container-background-color: #E9F3E6
+$content-container-color: #9F7D76
+
+=flex-row-jc_center-ai_center()
+  display: flex
+  justify-content: center
+  align-items: center
+
+=flex-column-container($justify-content,$align-items)
+  display: flex
+  justify-content: $justify-content
+  align-items: $align-items
+  flex-direction: column
+
+=flex-row-container($justify-content,$align-items)
+  display: flex
+  justify-content: $justify-content
+  align-items: $align-items
+
+=circle-container($diameter)
+  width: $diameter
+  height: $diameter
+  border-radius: $diameter/2
+  overflow: hidden
+
+
+.UserItem-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-top-left-radius: 9999px
+  border-bottom-left-radius: 9999px
+  background-color: $content-container-background-color
+  width: 320px
+
+.UserItem-avatar-container
+  +flex-row-jc_center-ai_center()
+  +circle-container(70px)
+  box-shadow:  9px 0px 30px 0px rgba(0,0,0,0.53)
+  //flex-basis: 50px
+  background-color: white
+
+
+.UserItem-avatar-container>img
+  +circle-container(40 px)
+  object-fit: cover
+
+
+.UseItem-content-container
+  +flex-column-container(center,flex-start)
+  color: $content-container-color
+  padding-left: 10px
+  text-wrap: none
+
+
+.UserItem-control-container
+  +flex-row-container(center,center)
+  background-color: $control-container-background-color
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%)
+  flex-basis: 100px
+  height: 100%
+
+
+
+.UserItem-fullName
+  font-weight: 500
+  font-family: sans-serif
+
+
+
+
+
+
